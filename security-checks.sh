@@ -1,6 +1,7 @@
 #!bin/bash
 echo "Running Container Image Security Checks..."
-docker images 
+docker pull pradeep326/doctor:latestdocker images 
+docker images
 trivy image a6a77683d370 
 docker run -it --net host --pid host --userns host --cap-add audit_control \
 -v /etc:/etc:ro \
